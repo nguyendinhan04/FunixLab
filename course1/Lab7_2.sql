@@ -73,29 +73,38 @@ select round(abs(min(lat_n) - max(lat_n)) + abs(min(long_w) - max(long_w)),4)
 from station;
 
 -- Task 17:
--- WITH 
---     total_lead_manager as (
---         select company_code,count(lead_manager_code) from lead_manager 
---         group by company_code
---     ),
---     total_senior_manager as(
---         select company_code,count(senior_manager_code) from senior_manager
---         group by company_code
---     ),
---     total_manager as(
---         select company_code,count(manager_code) from manager
---         group by company_code
---     ),
---     total_employee as(
---         select company_code,count(employee_code) from employee
---         group by company_code
---     )
--- select *
--- from company c
--- join total_lead_manager lm on c.company_code = lm.company_code
--- join total_senior_manager sm on c.company_code = sm.company_code
--- join total_manager m on c.company_code = m.company_code
--- join total_employee e  on c.company_code = e.company_code
+WITH 
+    total_lead_manager as (
+        select company_code,count(lead_manager_code) from lead_manager 
+        group by company_code
+    ),
+    total_senior_manager as(
+        select company_code,count(senior_manager_code) from senior_manager
+        group by company_code
+    ),
+    total_manager as(
+        select company_code,count(manager_code) from manager
+        group by company_code
+    ),
+    total_employee as(
+        select company_code,count(employee_code) from employee
+        group by company_code
+    )
+select *
+from company c
+join total_lead_manager lm on c.company_code = lm.company_code
+join total_senior_manager sm on c.company_code = sm.company_code
+join total_manager m on c.company_code = m.company_code
+join total_employee e  on c.company_code = e.company_code;
+
+-- Ver2
+SELECT c.company_code,c.founder,
+       (SELECT COUNT(distinct(lead_manager_code)) FROM lead_manager WHERE lead_manager.company_code = c.company_code) AS lead_manager_count,
+       (SELECT COUNT(distinct(senior_manager_code)) FROM senior_manager WHERE senior_manager.company_code = c.company_code) AS senior_manager_count,
+       (SELECT COUNT(distinct(manager_code)) FROM manager WHERE manager.company_code = c.company_code) AS manager_count,
+       (SELECT COUNT(distinct(employee_code)) FROM employee WHERE employee.company_code = c.company_code) AS employee_count
+FROM company c
+order by char_length(c.company_code), c.company_code;
 
 -- Task 18:
 select round(sqrt(power(min(lat_n) - max(lat_n),2) + power(min(long_w) - max(long_w),2)),4)
