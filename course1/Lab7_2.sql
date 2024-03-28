@@ -59,3 +59,45 @@ where lat_n < 137.2345;
 select round(long_w,4) from station
 where lat_n = (select max(lat_n) from station
 where lat_n < 137.2345);
+
+-- Task 14:
+select round(min(lat_n),4)from (select lat_n from station where lat_n > 38.7780) res;
+
+-- Task 15:
+select round((long_w),4)from station 
+where lat_n = (select min(lat_n) from station where lat_n > 38.7790)
+
+
+-- Task 16:
+select round(abs(min(lat_n) - max(lat_n)) + abs(min(long_w) - max(long_w)),4)
+from station;
+
+-- Task 17:
+-- WITH 
+--     total_lead_manager as (
+--         select company_code,count(lead_manager_code) from lead_manager 
+--         group by company_code
+--     ),
+--     total_senior_manager as(
+--         select company_code,count(senior_manager_code) from senior_manager
+--         group by company_code
+--     ),
+--     total_manager as(
+--         select company_code,count(manager_code) from manager
+--         group by company_code
+--     ),
+--     total_employee as(
+--         select company_code,count(employee_code) from employee
+--         group by company_code
+--     )
+-- select *
+-- from company c
+-- join total_lead_manager lm on c.company_code = lm.company_code
+-- join total_senior_manager sm on c.company_code = sm.company_code
+-- join total_manager m on c.company_code = m.company_code
+-- join total_employee e  on c.company_code = e.company_code
+
+-- Task 18:
+select round(sqrt(power(min(lat_n) - max(lat_n),2) + power(min(long_w) - max(long_w),2)),4)
+from station;
+
