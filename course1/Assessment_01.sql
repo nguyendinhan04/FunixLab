@@ -50,6 +50,11 @@ select employee_id, first_name,last_name, job_id, salary
 from employees 
 where salary = @second_max;
 
+-- SHOW SESSION VARIABLES
+-- where variable_name like '%second%';
+
+SELECT * FROM information_schema.session_variables;
+
 -- Task 5:
 -- Case 1:if the task only require getting name and salary of only employees' who have manager
 select concat(e1.first_name,' ',e1.last_name) as employee,e1.salary,concat(e2.first_name,' ',e2.last_name) as manager,e2.salary
