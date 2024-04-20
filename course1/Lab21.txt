@@ -1,0 +1,9 @@
+Question 1: 
+-Is a attribute decomposition
+-Is a lossless decomposition because in relation MNO MN is a candidate key and in QR Q is a candidate key
+-Is a dependency preserving because all dependency is hold
+
+Question 2:
+-Is a lossless decomposition 
+-Is a attribute preserving decomposition
+-Not a dependency preserving decomposisition

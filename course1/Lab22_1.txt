@@ -1,0 +1,16 @@
+Question 1: 
+Key : MO
+QUan Hệ trên chưa phải là 2NF
+-> R1(MO) key: M, R2(OP) key: O, R3(MNQ) key: M
+F1 = {MO -> M} 
+F2 = {O -> P} 
+F3 = {M -> N, N -> Q}
+
+Question 2:
+Quan hệ chưa ở dạng 3NF
+R1(MNO) key: MN
+R2(NP) key: N
+R3(PQ) key: P 
+F1 = {MN -> O}
+F2 = {N -> P} 
+F3 = {P -> Q} 
