@@ -1,0 +1,11 @@
+Employees:
+employee_id -> first_name
+employee_id -> Last_name
+employee_id -> Address
+employee_id -> Phone_number
+
+Customers:
+Customer_id -> First_name
+Customer_id -> Last_name
+Customer_id -> Phone_number
+
