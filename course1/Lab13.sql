@@ -33,10 +33,11 @@ begin
     
     open cur;
     my_loop : LOOP
+        if isFinish then leave my_loop; end if;
         fetch cur into tmp1,tmp2;
         set nouns := concat(nouns,',',tmp1);
         set adjectives := concat(adjectives,',',tmp2);
-        if isFinish then leave my_loop; end if; 
+        -- if isFinish then leave my_loop; end if; 
     end LOOP my_loop;
     
     
@@ -64,7 +65,8 @@ begin
     select noun into n from mytb order by rand() limit 1;
     select adjective into a from mytb order by rand() limit 1;
     
-    select concat(n,' ',a);
+    -- select concat(n,' ',a);
+    insert into stars values(concat(n,' ',a));
 end$$
 delimiter ;
 
@@ -77,11 +79,17 @@ create procedure task4()
 begin
     declare height float default 0;
     declare weight float default 0;
+
+    create table if not exists w_h(
+        wei float,
+        hei float
+    );
     
     set height := rand()*(190-100) + 100;
     set weight := rand()*(height/2 - height/3) + height/3;
     
-    select round(height,2),round(weight,2);
+    -- select round(height,2),round(weight,2);
+    insert into w_h values(round(height,2),round(weight,2));
     
 end$$
 delimiter ;

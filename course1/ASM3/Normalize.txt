@@ -27,3 +27,5 @@ Chi_tiet_don_ban(Chi_tiet_don_ban_id, don_hang_id, san_pham_id ,so_luong, don_vi
 F2 = {Chi_tiet_don_ban ,Chi_tiet_don_ban_id -> don_hang_id, Chi_tiet_don_ban_id -> san_pham_id, Chi_tiet_don_ban_id -> so_luong, Chi_tiet_don_ban_id -> don_vi}
 ----------------------------------------------------------------------------------------------------------
 Tuong tu voi bang don_mua
+
+

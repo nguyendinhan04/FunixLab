@@ -28,6 +28,7 @@ start transaction;
 select * from customers;
 commit;
 select * from customers;
+-- 2 cau lenh truy van van co su khac biet vi transaction 2 cua commit
 
 set transaction isolation level serializable;
 start transaction;
