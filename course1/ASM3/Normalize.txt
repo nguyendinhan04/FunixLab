@@ -1,0 +1,31 @@
+R1(san_pham_id,don_vi,ten,nha_cung_cap_id, so_luong, gia_ban, gia_mua)
+F = {	san_pham_id,don_vi -> so_luong 
+	san_pham_id,don_vi-> gia_ban,
+	san_pham_id,don_vi-> gia_mua
+	san_pham_id -> ten,
+	san_pham_id -> nha_cung_cap_id}
+chua phai dang 2NF vi luc nay ten va nha_cung_cap_id dang phu thuoc mot phan vao san_pham_id
+=> normalize 
+
+san_pham(san_pham_id, ten,nha_cung_cap_id)
+F1 = {San_pham_id -> Ten ,San_pham_id -> Nha_cung_cap}
+
+don_vi(san_pham_id,don_vi,so_luong,gia_ban,gia_mua)
+F2 = {(san_pham_id,don_vi) -> so_luong, (san_pham_id,don_vi) -> gia_ban, (san_pham_id,don_vi)  -> gia_mua}
+
+
+-------------------------------------------------------------------------------------------------------------
+R2(don_mua_id,Chi_tiet_don_ban_id , san_pham_id, thoi_gian, tong_tien, nha_cung_cap_id, don_Vi, nhan_vien_id, so_luong)
+F = {Don_ban_id -> thoi_gian,Don_ban_id -> tong_tien, Don_ban_id -> KHach_hang_id , Don_ban_id -> Nhan_vien_id, (Don_ban_id,Chi_tiet_don_ban_id)->  don_hang_id,(Don_ban_id,Chi_tiet_don_ban_id)-> don_hang_id,(Don_ban_id,Chi_tiet_don_ban_id)-> so_luong,(Don_ban_id,Chi_tiet_don_ban_id)-> don_vi}
+
+-> not normalize 
+
+Don_ban(Don_ban_id ,thoi_gian, tong_tien, KHach_hang_id, Nhan_vien_id)
+F1 = {Don_ban,Don_ban_id -> thoi_gian,Don_ban_id -> tong_tien,Don_ban_id -> KHach_hang_id , Don_ban_id -> Nhan_vien_id}
+
+Chi_tiet_don_ban(Chi_tiet_don_ban_id, don_hang_id, san_pham_id ,so_luong, don_vi)
+F2 = {Chi_tiet_don_ban ,Chi_tiet_don_ban_id -> don_hang_id, Chi_tiet_don_ban_id -> san_pham_id, Chi_tiet_don_ban_id -> so_luong, Chi_tiet_don_ban_id -> don_vi}
+----------------------------------------------------------------------------------------------------------
+Tuong tu voi bang don_mua
+
+

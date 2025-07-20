@@ -1,0 +1,17 @@
+Task1:
+1.trivi
+2.trivi
+3.nontrivi
+4.semitrivi
+5.semitrivi
+6.nontrivi
+7.non.trivi
+Task2:
+AB+ = ABCDE
+BD+ = BDE
+
+task 3:
+CF+ = CFGEAD
+BG+ = ABCDG
+AF+ = AFDE
+AB+= ABCDG

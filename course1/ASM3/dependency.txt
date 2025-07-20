@@ -1,0 +1,53 @@
+Nhan_vien
+Nhan_vien_id-> ho
+Nhan_vien_id--> ten
+Nhan_vien_id--> Dia_chi
+Nhan_vien_id--> SDT
+
+thong_tin_dang_nhap
+nhan_vien_id -> ten_dang_nhap
+nhan_vien_id -> mat_khau_ma_hoa
+
+KHach_hang
+KHach_hang_id -> Ho
+KHach_hang_id -> Ten
+KHach_hang_id -> SDT
+
+San_pham:
+San_pham_id -> Ten 
+San_pham_id -> Nha_cung_cap
+
+don_vi:
+san_pham_id,don_vi -> so_luong
+san_pham_id,don_vi -> gia_ban
+san_pham_id,don_vi -> gia_mua
+san_pham_id,don_vi -> ngay_cap_nhat
+
+Nha_cung_cap
+Nha_cung_cap_id -> ten 
+Nha_cung_cap_id -> SDT
+Nha_cung_cap_id -> Dia_chi
+
+Don_ban
+Don_ban_id -> thoi_gian
+Don_ban_id -> tong_tien
+Don_ban_id -> KHach_hang_id 
+Don_ban_id -> Nhan_vien_id
+
+Chi_tiet_don_ban
+Chi_tiet_don_ban_id -> don_hang_id
+Chi_tiet_don_ban_id -> san_pham_id
+Chi_tiet_don_ban_id -> so_luong
+Chi_tiet_don_ban_id -> don_vi
+
+Don_mua
+Don_mua_id -> thoi_gian
+Don_mua_id -> tong_tien
+Don_mua_id -> Nha_cung_cap_id
+Don_mua_id -> Nhan_vien_id
+
+Chi_tiet_don_mua
+CHi_tiet_don_mua_id -> don_mua_id
+CHi_tiet_don_mua_id -> San_pham_id
+CHi_tiet_don_mua_id -> Don_vi
+CHi_tiet_don_mua_id -> SO_luong
