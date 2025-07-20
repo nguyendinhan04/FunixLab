@@ -1,0 +1,1263 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/16/2024 11:17:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-0LSSFNM"
+  DTS:CreatorName="DESKTOP-0LSSFNM\dinha"
+  DTS:DTSID="{0E1914A8-41CA-48CD-B07B-C2D49E4BEB40}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1066"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{CD40F7BB-AB68-4E37-AA4A-825308806E23}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Attendance Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0D98792D-082D-4973-A215-03B404094E18}"
+      DTS:ObjectName="Attendance Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1066"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1258"
+          DTS:ConnectionString="C:\Users\dinha\OneDrive\Documents\FunixLab\course2\Lab3\Attendance System Data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{56EFB9A7-D097-4A8A-BF7F-FC512FA65362}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{7E3F3266-EA13-4C9D-A534-6F9BA4AE3B6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Academic Status"
+              DTS:DTSID="{B83BFEC4-0217-4D69-966C-E557C64096C7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-0LSSFNM.Lab3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{47F9A9F9-2E41-4F0F-AC78-277576477804}"
+      DTS:ObjectName="DESKTOP-0LSSFNM.Lab3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-0LSSFNM;Initial Catalog=Lab3;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{47F9A9F9-2E41-4F0F-AC78-277576477804}DESKTOP-0LSSFNM.Lab3;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-0LSSFNM\SQLEXPRESS.funixLab2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{08308E4B-973A-403F-9A2F-89172674DDE8}"
+      DTS:ObjectName="DESKTOP-0LSSFNM\SQLEXPRESS.funixLab2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-0LSSFNM\SQLEXPRESS;Initial Catalog=funixLab2;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{08308E4B-973A-403F-9A2F-89172674DDE8}DESKTOP-0LSSFNM\SQLEXPRESS.funixLab2;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-0LSSFNM\SQLEXPRESS.funixLab2 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{59C9E9AF-1087-4707-9D51-AEF9828186AF}"
+      DTS:ObjectName="DESKTOP-0LSSFNM\SQLEXPRESS.funixLab2 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-0LSSFNM\SQLEXPRESS;Initial Catalog=funixLab2;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{59C9E9AF-1087-4707-9D51-AEF9828186AF}DESKTOP-0LSSFNM\SQLEXPRESS.funixLab2 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-0LSSFNM\SQLEXPRESS.funixLab3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{22023550-0D0C-4CC4-A06A-92583B763E7D}"
+      DTS:ObjectName="DESKTOP-0LSSFNM\SQLEXPRESS.funixLab3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-0LSSFNM\SQLEXPRESS;Initial Catalog=funixLab3;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{22023550-0D0C-4CC4-A06A-92583B763E7D}DESKTOP-0LSSFNM\SQLEXPRESS.funixLab3;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Tuition Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{788800BB-240B-423A-BFD7-7EACFE1114D4}"
+      DTS:ObjectName="Tuition Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1066"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1258"
+          DTS:ConnectionString="C:\Users\dinha\OneDrive\Documents\FunixLab\course2\Lab3\Tuition System Data.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{FACC85C3-1EFD-4219-BC72-B9A5A0DFB3D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{698F8649-7478-4DDA-B6D0-0B8784350B63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Enrollment Status"
+              DTS:DTSID="{0D1576D0-A19A-4A79-B5E0-2B51F903EB02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Academic Status"
+              DTS:DTSID="{6053F450-4E5E-4489-9766-F53E787C2FD2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5B9DA703-47F2-424D-9254-283913F8A4EC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[First Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="First Name"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[First Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Academic Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Academic Status"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Academic Status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[Last Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Last Name"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Last Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[First Name]},1,1) + (#{Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Academic Status]} == "Good standing" ? "GS" : "AP")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING([First Name],1,1) + ([Academic Status] == "Good standing" ? "GS" : "AP")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[LastNameFix]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[LastNameFix]"
+                      name="LastNameFix"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,40)#{Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Last Name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,40)[Last Name]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FirstNameFix]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="40"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FirstNameFix]"
+                      name="FirstNameFix"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,40)#{Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[First Name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,40)[First Name]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input].Columns[Last Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Last Name"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Last Name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,40)#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Last Name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,40)[Last Name]</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input].Columns[First Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="First Name"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[First Name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,25)#{Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[First Name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,25)[First Name]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1066"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Attendance Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Attendance Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Last Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Last Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Last Name]"
+                      name="Last Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[First Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[First Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[First Name]"
+                      name="First Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Academic Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Academic Status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Academic Status]"
+                      name="Academic Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Last Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[First Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="First Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Academic Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Academic Status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1258"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Source 1"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1066"
+              name="Flat File Source 1"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Source 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Tuition Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Tuition Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Last Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Last Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Last Name]"
+                      name="Last Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[First Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[First Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[First Name]"
+                      name="First Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Enrollment Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Enrollment Status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Enrollment Status]"
+                      name="Enrollment Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Academic Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Academic Status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].Columns[Academic Status]"
+                      name="Academic Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Last Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[First Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="First Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Enrollment Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Enrollment Status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[Academic Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Academic Status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1258"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[OLE DB Destination 1]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1258</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-0LSSFNM.Lab3]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-0LSSFNM.Lab3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Last Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Last Name"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Last Name]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Last Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[First Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="First Name"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[First Name]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[First Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[AcademicStatusAll]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AcademicStatusAll"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AcademicStatusAll]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AcademicStatusAll]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Last Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[First Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="First Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AcademicStatusAll]"
+                      dataType="wstr"
+                      length="50"
+                      name="AcademicStatusAll" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Last Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Last Name"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Last Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Last Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[First Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="First Name"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[First Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[First Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Academic Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Academic Status"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Academic Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AcademicStatusAll]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[LastNameFix]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="LastNameFix"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[LastNameFix]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Last Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[FirstNameFix]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="FirstNameFix"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FirstNameFix]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[First Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Status"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Status]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AcademicStatusAll]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Last Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Last Name]"
+                      name="Last Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[First Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[First Name]"
+                      name="First Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AcademicStatusAll]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AcademicStatusAll]"
+                      name="AcademicStatusAll" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\Flat File Source 1.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output1]"
+              endId="Package\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="277.166653462583,84.8999996564786" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="388.833312388924,127.699999150237" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="12.305561740227,47.5000005424022" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="222.305553544588,205.722222081599" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination 1"
+          TopLeft="625.361077243395,122.911110344717" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Data Flow Task\Derived Column 1"
+          TopLeft="220.916656535947,57.8888887331994" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Data Flow Task\Flat File Source 1"
+          TopLeft="16.611118699665,203.888888552399" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="508.833312388924,146.105554747477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.52776485447,0"
+              Start="0,0"
+              End="109.02776485447,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="109.02776485447,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
+          TopLeft="163.505561740227,68.3000005424022">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.41109479572,10.3888881907971"
+              Start="0,0"
+              End="49.91109479572,10.3888881907971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.70554739786,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.70554739786,0"
+                    Point2="28.70554739786,0"
+                    Point3="28.70554739786,4" />
+                  <mssgle:LineSegment
+                    End="28.70554739786,6.38888819079713" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.70554739786,6.38888819079713"
+                    Point2="28.70554739786,10.3888881907971"
+                    Point3="32.70554739786,10.3888881907971" />
+                  <mssgle:LineSegment
+                    End="49.91109479572,10.3888881907971" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="176.611118699665,225.605555316999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.6944348449234,0"
+              Start="0,0"
+              End="38.1944348449234,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.1944348449234,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="298.705553544588,205.722222081599">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="150.127758844336,-36.4222229313625"
+              Start="0,0"
+              End="150.127758844336,-28.9222229313625">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-14.2111114656812" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-14.2111114656812"
+                    Point2="0,-18.2111114656812"
+                    Point3="4,-18.2111114656812" />
+                  <mssgle:LineSegment
+                    End="146.127758844336,-18.2111114656812" />
+                  <mssgle:CubicBezierSegment
+                    Point1="146.127758844336,-18.2111114656812"
+                    Point2="150.127758844336,-18.2111114656812"
+                    Point3="150.127758844336,-22.2111114656812" />
+                  <mssgle:LineSegment
+                    End="150.127758844336,-28.9222229313625" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="301.716656535947,99.4888887331994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.116655852977,28.2111104170371"
+              Start="0,0"
+              End="147.116655852977,20.7111104170371">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.1055552085185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.1055552085185"
+                    Point2="0,14.1055552085185"
+                    Point3="4,14.1055552085185" />
+                  <mssgle:LineSegment
+                    End="143.116655852977,14.1055552085185" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.116655852977,14.1055552085185"
+                    Point2="147.116655852977,14.1055552085185"
+                    Point3="147.116655852977,18.1055552085185" />
+                  <mssgle:LineSegment
+                    End="147.116655852977,20.7111104170371" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,187 @@
+// co bao nhieu nguoi la nu va lam viec hon 50 tieng mot tuan
+use("ASM2");
+db.user.aggregate([
+	{
+		$lookup: {
+			from: "personlInfo",
+			localField: "personlInfo_id",
+			foreignField: "_id",
+			as: "personalInfo",
+		},
+	},
+	{
+		$match: {
+			personalInfo: {
+				$elemMatch: {
+					gender: " Female",
+				},
+			},
+		},
+	},
+	{
+		$lookup: {
+			from: "occupation",
+			localField: "occupation_id",
+			foreignField: "_id",
+			as: "occupation",
+		},
+	},
+	{
+		$match: {
+			occupation: {
+				$elemMatch: {
+					hour_per_week: { $gt: 50 },
+				},
+			},
+		},
+	},
+	{
+		$count: "total",
+	},
+]);
+
+// co bao nhieu nguoi o My co muc thu nhap trne 50k
+use("ASM2");
+db.user.aggregate([
+	{
+		$lookup: {
+			from: "personlInfo",
+			localField: "personlInfo_id",
+			foreignField: "_id",
+			as: "personalInfo",
+		},
+	},
+	{
+		$match: {
+			personalInfo: {
+				$elemMatch: {
+					native_country: " United-States",
+				},
+			},
+		},
+	},
+	{
+		$lookup: {
+			from: "finance",
+			localField: "finance_id",
+			foreignField: "_id",
+			as: "finance",
+		},
+	},
+	{
+		$match: {
+			finance: {
+				$elemMatch: {
+					income_bracket: " >50K",
+				},
+			},
+		},
+	},
+	{
+		$count: "total",
+	},
+]);
+
+// tim so nguoi Bachelors o My
+use("ASM2");
+db.user.aggregate([
+	{
+		$lookup: {
+			from: "education",
+			localField: "education_id",
+			foreignField: "_id",
+			as: "education",
+		},
+	},
+	{
+		$match: {
+			education: {
+				$elemMatch: {
+					education: " Bachelors",
+				},
+			},
+		},
+	},
+	{
+		$lookup: {
+			from: "personlInfo",
+			localField: "personlInfo_id",
+			foreignField: "_id",
+			as: "personalInfo",
+		},
+	},
+	{
+		$match: {
+			personalInfo: {
+				$elemMatch: {
+					native_country: " United-States",
+				},
+			},
+		},
+	},
+	{
+		$count: "total",
+	},
+]);
+
+// liet ke cac loai tinh trang hoon nhaan
+use("ASM2");
+db.relationship.aggregate([
+	{
+		$group: {
+			_id: "$marital_status",
+		},
+	},
+]);
+
+// liet ke cac loai quan he
+use("ASM2");
+db.relationship.aggregate([
+	{
+		$group: {
+			_id: "$relationship",
+		},
+	},
+]);
+
+// tim so nguoi Masters chua co gia dinh
+use("ASM2");
+db.user.aggregate([
+	{
+		$lookup: {
+			from: "education",
+			localField: "education_id",
+			foreignField: "_id",
+			as: "education",
+		},
+	},
+	{
+		$match: {
+			education: {
+				$elemMatch: {
+					education: " Masters",
+				},
+			},
+		},
+	},
+	{
+		$lookup: {
+			from: "relationship",
+			localField: "relationship_id",
+			foreignField: "_id",
+			as: "relationship",
+		},
+	},
+	{
+		$match: {
+			relationship: {
+				$elemMatch: {
+					relationship: " Not-in-family",
+				},
+			},
+		},
+	},
+	{
+		$count: "total",
+	},
+]);
