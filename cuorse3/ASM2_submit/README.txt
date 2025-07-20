@@ -1,0 +1,3 @@
+- Sau khi xử lý dữ liệu từ spark, em không lưu vào file csv mà trực tiếp chuyển dữ liệu lên mongoDB luôn
+- Các phần import dữ liệu vào mongo, em chạy mongo ở một container khác nên import dữ liệu bằng cách sử dụng mongoHook, không dùng BashOperator
+- Em sử dụng astro để tạo airflow, nên cài config LocalExcutor em không  cài đặt bằng file airflow.cfg mà đặt biến trong file .env
